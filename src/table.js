@@ -1,19 +1,30 @@
 import React from 'react';
 import "./table.css"
+import axios from "axios";
 
 const Table = () =>{
+  
+
+  axios.get("https://jsonplaceholder.typicode.com/todos")
+  .then(res=>{
+  console.log(res.data,"res")
+}).catch(err=>{
+  console.log(err,"err")
+})
+
     return(
         <div>
+          
 
 <h2>My Customers</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"></input>
+<input type="text" id="myInput" placeholder="Search for names.." title="Type in a name"></input>
 
 <table id="myTable">
 
   <tr class="header">
-    <th >Name</th>
-    <th >Country</th>
+    <th >ID</th>
+    <th >Title</th>
     <th >Action</th>
   </tr>
   
