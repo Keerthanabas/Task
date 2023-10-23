@@ -27,7 +27,7 @@
   }
   
   #myTable tr {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #efe9e9;
   }
   
   #myTable tr.header, #myTable tr:hover {
