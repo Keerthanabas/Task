@@ -4,6 +4,8 @@ import axios from "axios";
 
 const Table = () =>{
   const [data,setData]=useState([])
+  const [search,setSearch]=useState("")
+  
 
   
 useEffect(()=>{
@@ -16,10 +18,36 @@ useEffect(()=>{
 })
 },[])
 
-const SearchName=(title)=>{
-const name =  data.filter((item)=>item.title === title)
+useEffect(()=>{
+ const name = data.filter(item=>
+    {
+      console.log(item,"items")
+      return(
+      item.title.toLowerCase().includes(search.toLowerCase()))
+    }
+     )
 setData(name)
-}
+
+},[search])
+
+
+
+// const SearchName=(value)=>{
+//   value.preventDefault()
+// // const name =  data.filter((item)=>item.title !== title)
+
+// let name = data.filter(item=>
+//   {
+//     console.log(item,"items")
+//     return(
+//     item.title.toLowerCase().match(value.target.value.toLowerCase()))
+//   }
+//    )
+// setData(name)
+// console.log(value,name,"checking")
+// }
+// const SearchName = data.filter((item=>
+//   item.title().includes(data.toLowerCase())))
 
     return(
         <div>
@@ -28,7 +56,7 @@ setData(name)
 <h2>My Customers</h2>
 
 
-<input type="text" id="myInput" placeholder="Search for names.." title="Type in a name"onChange={(e)=>SearchName(e.target.value)}></input>
+<input type="text" id="myInput" placeholder="Search for names.." title="Type in a name"onChange={(e)=>setSearch(e.target.value)}></input>
 
 
 <table id="myTable">
