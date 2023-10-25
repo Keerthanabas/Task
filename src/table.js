@@ -30,6 +30,11 @@ setData(name)
 
 },[search])
 
+const deleteTitle = (title) =>{
+  const id = data.filter((item)=>item.title !== title)
+  setData(id)
+}
+
 
 
 // const SearchName=(value)=>{
@@ -74,7 +79,7 @@ setData(name)
     <td>{item.title}</td>
     <td>
         <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => deleteTitle(item.title)}>Delete</button>
     </td>
   </tr>
   )
