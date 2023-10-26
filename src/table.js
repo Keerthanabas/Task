@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import "./table.css"
 import axios from "axios";
+import {useNavigate} from "react-router-dom"
+
 
 const Table = () =>{
   const [data,setData]=useState([])
   const [search,setSearch]=useState("")
+  const navigate = useNavigate()
   
 
   
@@ -33,7 +36,16 @@ setData(name)
 const deleteTitle = (title) =>{
   const id = data.filter((item)=>item.title !== title)
   setData(id)
-}
+  }
+
+  const editTile =(title)=>{
+    navigate("/edit", {
+      itemId: 86,
+      otherParam: 'anything you want here',
+    })
+  }
+
+
 
 
 
@@ -78,7 +90,7 @@ const deleteTitle = (title) =>{
     <td>{item.id}</td>
     <td>{item.title}</td>
     <td>
-        <button>Edit</button>
+        <button onClick={() => editTile(item.title)}>Edit</button>
         <button onClick={() => deleteTitle(item.title)}>Delete</button>
     </td>
   </tr>
