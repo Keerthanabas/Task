@@ -9,7 +9,7 @@ function App() {
     <div >
       <Routes>
       <Route exact path = "/table"element={<Table/>}/>
-      <Route exact path = "/edit" element={<Edit/>}/>
+      <Route exact path = "/edit/:id" element={<Edit/>}/>
 
       </Routes>
       

@@ -38,12 +38,12 @@ const deleteTitle = (title) =>{
   setData(id)
   }
 
-  const editTile =(title)=>{
-    navigate("/edit", {
-      itemId: 86,
-      otherParam: 'anything you want here',
-    })
+  const editTile =(id)=>{
+    navigate(`/edit/${id}`) 
   }
+  
+  
+
 
 
 
@@ -90,7 +90,7 @@ const deleteTitle = (title) =>{
     <td>{item.id}</td>
     <td>{item.title}</td>
     <td>
-        <button onClick={() => editTile(item.title)}>Edit</button>
+        <button onClick={() => editTile(item.id)}>Edit</button>
         <button onClick={() => deleteTitle(item.title)}>Delete</button>
     </td>
   </tr>
