@@ -97,8 +97,6 @@ const deleteTitle = (title) =>{
   )
 })}
   
-  
- 
 </table>
 
 </div>
