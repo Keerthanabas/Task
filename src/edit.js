@@ -30,7 +30,7 @@ const navigate = useNavigate()
 <input type = "text" value={id} placeholder="ID" onChange={(e)=>setId(e.target.value)}/> <br></br>
 
 <lable>Title</lable> <br></br>
-<input type = "text" value={title}   placeholder="Title"onChange={(e)=>setTitle(e.target.value)}/>
+<input type = "text" value={title}   placeholder="Title" onChange={(e)=>setTitle(e.target.value)}/>
 
 </div>
 )
