@@ -32,7 +32,6 @@ const navigate = useNavigate()
 <lable>Title</lable> <br></br>
 <input type = "text" value={title}   placeholder="Title"onChange={(e)=>setTitle(e.target.value)}/>
 
-
 </div>
 )
 }
